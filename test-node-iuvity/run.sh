@@ -18,13 +18,13 @@ kubectl apply -f k8s/pdb.yaml
 kubectl apply -f k8s/service.yaml
 
 # Verificar estado del deployment
-kubectl get deployments
+kubectl get deployments -l app=test-node-iuvity
 
 # Verificar pods
-kubectl get pods
+kubectl get pods -l app=test-node-iuvity
 
 # Verificar servicio
-kubectl get services
+kubectl get services -l app=test-node-iuvity
 
 # Ejecutar el port-forward
 kubectl port-forward service/test-node-iuvity-service 3500:80

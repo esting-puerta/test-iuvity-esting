@@ -1,5 +1,5 @@
 # Clean up unused containers and images
-##ocker container prune -f
+##docker container prune -f
 docker image prune -f
 
 # Remove specific image
@@ -11,8 +11,8 @@ kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/hpa.yaml
 kubectl apply -f k8s/service.yaml
 
-kubectl get deployments
-kubectl get pods
-kubectl get services
+kubectl get deployments -l app=test-react-iuvity
+kubectl get pods -l app=test-react-iuvity
+kubectl get services -l app=test-react-iuvity
 
 kubectl port-forward service/test-react-iuvity-service 3000:80
