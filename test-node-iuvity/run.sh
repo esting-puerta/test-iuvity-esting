@@ -1,3 +1,5 @@
+docker image prune -f
+
 docker rmi -f test-node-iuvity:latest
 
 # Construir la imagen Docker

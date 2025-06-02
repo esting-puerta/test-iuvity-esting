@@ -99,3 +99,6 @@ else
     show_usage
     exit 1
 fi 
+
+
+kubectl delete -f k8s/

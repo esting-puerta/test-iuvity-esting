@@ -1,3 +1,8 @@
+# Clean up unused containers and images
+##ocker container prune -f
+docker image prune -f
+
+# Remove specific image
 docker rmi -f test-react-iuvity:latest
 
 docker build -t test-react-iuvity .
