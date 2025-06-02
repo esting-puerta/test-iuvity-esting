@@ -5,17 +5,19 @@ const dispositivos_1 = require("../../utils/data/dispositivos");
 class DispositivoRepositoryImpl {
     dispositivos = [...dispositivos_1.dispositivos];
     async findAll() {
-        return this.dispositivos;
+        return [...this.dispositivos];
     }
     async findById(id) {
-        return this.dispositivos.find(dispositivo => dispositivo.id === id) || null;
+        const dispositivo = this.dispositivos.find(d => d.id === id);
+        return dispositivo ? { ...dispositivo } : null;
     }
     async create(dispositivo) {
+        const maxId = Math.max(...this.dispositivos.map(d => d.id), 0);
         const newDispositivo = {
-            id: this.dispositivos.length,
+            id: maxId + 1,
             ...dispositivo
         };
-        this.dispositivos.push(newDispositivo);
+        this.dispositivos.push({ ...newDispositivo });
         return newDispositivo;
     }
     async update(id, dispositivo) {
@@ -23,8 +25,9 @@ class DispositivoRepositoryImpl {
         if (index === -1) {
             throw new Error('Dispositivo not found');
         }
-        this.dispositivos[index] = { ...this.dispositivos[index], ...dispositivo };
-        return this.dispositivos[index];
+        const updatedDispositivo = { ...this.dispositivos[index], ...dispositivo };
+        this.dispositivos[index] = updatedDispositivo;
+        return { ...updatedDispositivo };
     }
     async delete(id) {
         const index = this.dispositivos.findIndex(d => d.id === id);

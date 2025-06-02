@@ -104,55 +104,6 @@ const DispositivosList: React.FC<Props> = ({ onValidarDispositivo }) => {
           ))}
         </tbody>
       </table>
-
-      <table className="footer-table">
-        <tr>
-          <td colSpan={3} className="divider">&nbsp;</td>
-        </tr>
-        <tr className="total-row">
-          <td colSpan={2}>
-            <p className="total-label">Subtotal :</p>
-          </td>
-          <td>
-            <p className="total-value">$ 61.82</p>
-          </td>
-        </tr>
-        <tr className="total-row">
-          <td colSpan={2}>
-            <p className="total-label">Tax :</p>
-          </td>
-          <td>
-            <p className="total-value">$ 2.18</p>
-          </td>
-        </tr>
-        <tr className="total-row">
-          <td colSpan={2}>
-            <p className="total-label">Shipping :</p>
-          </td>
-          <td>
-            <p className="total-value">$ 3.21</p>
-          </td>
-        </tr>
-        <tr className="total-row">
-          <td colSpan={2}>
-            <p className="total-label"><strong>Total : </strong></p>
-          </td>
-          <td>
-            <p className="total-value"><strong>$ 68.14</strong></p>
-          </td>
-        </tr>
-        <tr>
-          <td colSpan={3} className="divider">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colSpan={3}>
-            <p className="footer-note">
-              Invoice was created on a computer and is valid without the signature
-              and seal.
-            </p>
-          </td>
-        </tr>
-      </table>
     </div>
   );
 };
