@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #2c3e50;
+    overflow-x: hidden;
+}
+
+/* Colores Banco de Bogotá */
+:root {
+    --bb-blue-primary: #003d7a;
+    --bb-blue-secondary: #0056b3;
+    --bb-gold: #d4af37;
+    --bb-gold-light: #f4e4a6;
+    --bb-gray-dark: #495057;
+    --bb-gray-medium: #6c757d;
+    --bb-gray-light: #e9ecef;
+    --bb-white: #ffffff;
+    --bb-success: #28a745;
+    --bb-warning: #ffc107;
+    --bb-danger: #dc3545;
+    --bb-info: #17a2b8;
+}
+
+/* Header corporativo */
+.header {
+    background: var(--bb-blue-primary);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 61, 122, 0.2);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: var(--bb-gold);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bb-blue-primary);
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+.header-text {
+    color: var(--bb-white);
+}
+
+.header-text h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.error-container {
+    background: var(--bb-white);
+    border-radius: 16px;
+    padding: 60px 40px;
+    box-shadow: 0 15px 35px rgba(0, 61, 122, 0.1);
+    border: 1px solid var(--bb-gray-light);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--bb-blue-primary), var(--bb-gold), var(--bb-blue-primary));
+}
+
+/* Animación del número 404 */
+.error-number {
+    font-size: 8rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, var(--bb-blue-primary), var(--bb-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.error-title {
+    color: var(--bb-blue-primary);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.error-subtitle {
+    color: var(--bb-gray-medium);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.error-description {
+    color: var(--bb-gray-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botones de acción */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--bb-blue-primary), var(--bb-blue-secondary));
+    color: var(--bb-white);
+    border-color: var(--bb-blue-primary);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--bb-blue-secondary), #004085);
+    box-shadow: 0 8px 25px rgba(0, 61, 122, 0.4);
+}
+
+.btn-secondary {
+    background: var(--bb-white);
+    color: var(--bb-blue-primary);
+    border: 2px solid var(--bb-blue-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--bb-blue-primary);
+    color: var(--bb-white);
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, var(--bb-gold), #b8941f);
+    color: var(--bb-blue-primary);
+    border-color: var(--bb-gold);
+    font-weight: 700;
+}
+
+.btn-gold:hover {
+    background: linear-gradient(135deg, #b8941f, #9c7c1a);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Sección de ayuda */
+.help-section {
+    background: rgba(0, 61, 122, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.help-title {
+    color: var(--bb-blue-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.help-list {
+    text-align: left;
+    color: var(--bb-gray-dark);
+    line-height: 1.8;
+}
+
+.help-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.help-list li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.help-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--bb-success);
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: var(--bb-blue-primary);
+    color: var(--bb-white);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: var(--bb-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    color: var(--bb-gold);
+}
+
+.footer-text {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Elementos decorativos */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(0, 61, 122, 0.1), rgba(212, 175, 55, 0.1));
+    animation: float-random 6s ease-in-out infinite;
+}
+
+@keyframes float-random {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+.circle-1 {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.circle-3 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .error-container {
+        padding: 40px 20px;
+        margin: 20px;
+    }
+
+    .error-number {
+        font-size: 6rem;
+    }
+
+    .error-title {
+        font-size: 1.8rem;
+    }
+
+    .error-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Animación de entrada */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de búsqueda */
+.search-suggestion {
+    background: var(--bb-gold-light);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid var(--bb-gold);
+}
+
+.search-suggestion h4 {
+    color: var(--bb-blue-primary);
+    margin-bottom: 10px;
+}
+
+.search-suggestion p {
+    color: var(--bb-gray-dark);
+    margin: 0;
+}
