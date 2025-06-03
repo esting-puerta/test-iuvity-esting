@@ -156,7 +156,7 @@ const ModificarData: React.FC<Props> = ({ dispositivo }) => {
 
                     <form id="dispositivoForm" onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label className="form-label">Nombre del Dispositivo</label>
+                            <label className="form-label" htmlFor="nombre">Nombre del Dispositivo</label>
                             <input
                                 type="text"
                                 id="nombre"
@@ -169,7 +169,7 @@ const ModificarData: React.FC<Props> = ({ dispositivo }) => {
                         </div>
 
                         <div className="form-group">
-                            <label className="form-label">Modelo</label>
+                            <label className="form-label" htmlFor="modelo">Modelo</label>
                             <select id="modelo" name="modelo" className="form-select" required>
                                 <option value="">Seleccionar modelo</option>
                                 {Object.entries(DEVICE_MODELS).map(([brand, models]) => (
@@ -186,7 +186,7 @@ const ModificarData: React.FC<Props> = ({ dispositivo }) => {
                         </div>
 
                         <div className="form-group">
-                            <label className="form-label">Almacenamiento</label>
+                            <label className="form-label" htmlFor="almacenamiento">Almacenamiento</label>
                             <select id="almacenamiento" name="almacenamiento" className="form-select" required>
                                 <option value="">Seleccionar capacidad</option>
                                 {STORAGE_OPTIONS.map(option => (

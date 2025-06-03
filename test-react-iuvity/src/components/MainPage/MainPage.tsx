@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import '../../App.css';
 import UsuarioData from '../UsuarioData/UsuarioData';
@@ -67,28 +67,26 @@ const MainPage: React.FC = () => {
                                     </div>
 
                                     <div>
-                                        <BrowserRouter>
-                                            <AnimatePresence mode="wait">
-                                                <Routes>
-                                                    <Route path="/" element={
-                                                        <PageTransition>
-                                                            <DispositivosList onValidarDispositivo={validarDispositivo} />
-                                                        </PageTransition>
-                                                    } />
-                                                    <Route path="/data" element={
-                                                        <PageTransition>
-                                                            <ModificarData
-                                                                dispositivo={dispositi} />
-                                                        </PageTransition>
-                                                    } />
-                                                    <Route path="*" element={
-                                                        <PageTransition>
-                                                            <NotFound />
-                                                        </PageTransition>
-                                                    } />
-                                                </Routes>
-                                            </AnimatePresence>
-                                        </BrowserRouter>
+                                        <AnimatePresence mode="wait">
+                                            <Routes>
+                                                <Route path="/" element={
+                                                    <PageTransition>
+                                                        <DispositivosList onValidarDispositivo={validarDispositivo} />
+                                                    </PageTransition>
+                                                } />
+                                                <Route path="/data" element={
+                                                    <PageTransition>
+                                                        <ModificarData
+                                                            dispositivo={dispositi} />
+                                                    </PageTransition>
+                                                } />
+                                                <Route path="*" element={
+                                                    <PageTransition>
+                                                        <NotFound />
+                                                    </PageTransition>
+                                                } />
+                                            </Routes>
+                                        </AnimatePresence>
                                     </div>
                                 </td>
                             </tr>
